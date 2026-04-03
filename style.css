@@ -600,6 +600,77 @@ button {
 }
 
 /* =========================
+   FAQ / ACORDEÃO
+========================= */
+
+.faq-section {
+  margin-top: 28px;
+}
+
+.faq-list {
+  display: grid;
+  gap: 12px;
+}
+
+.faq-item {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: border-color 0.3s, background 0.3s;
+}
+
+.faq-item.active {
+  border-color: rgba(56, 189, 248, 0.35);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.faq-question {
+  width: 100%;
+  background: transparent;
+  color: var(--text);
+  padding: 16px 20px;
+  font-size: 1.05rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+}
+
+.faq-question:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.faq-icon {
+  color: var(--primary);
+  font-size: 1.4rem;
+  font-weight: normal;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg); /* Transforma o "+" em "x" */
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px;
+  padding: 0 20px 20px 20px;
+}
+
+.faq-answer p {
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* =========================
    RESPONSIVIDADE
 ========================= */
 @media (max-width: 980px) {
@@ -680,3 +751,4 @@ button {
     align-items: flex-start;
   }
 }
+
